@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    
+      <bean id="add" class="com.hibernate.Address" c:hno="101" c:area="kutub" c:city="Delhi"/>
+    
+      <bean id="studentbean1" class="com.hibernate.Student" c:address-ref="add">
+      
+         <constructor-arg  name="sname" value="Manisha Agrawal"/>
+         <constructor-arg name="contacts">
+           <set>
+				<value>9511813414 </value>
+				<value>9565797789</value>
+			</set>
+          </constructor-arg>
+         
+         <constructor-arg  name="age" value="40"/>
+         
+          <constructor-arg name="courses">
+           <map>
+				<entry key="1" value="MCA"></entry>
+				<entry key="2" value="Java Full Stack Dev"></entry>
+			</map>
+
+          </constructor-arg>
+         
+     
+      </bean>
+
+	
+	<!--  
+
+	<bean id="studentbean1" class="com.hibernate.Student">
+		<property name="sname" value="Manisha Agrawal" />
+		<property name="contacts">
+			<set>
+				<value>9511813414 </value>
+				<value>9565797789</value>
+			</set>
+		</property>
+		<property name="age" value="40" />
+		<property name="courses">
+			<map>
+				<entry key="1" value="MCA"></entry>
+				<entry key="2" value="Java Full Stack Dev"></entry>
+			</map>
+
+		</property>
+		
+		<property name="address">
+		    <ref bean="add"></ref>
+		</property>
+	</bean>-->
+
+	
+
+</beans>
